@@ -4,7 +4,9 @@
 
   let data;
   async function fetchData() {
-    let rawResponse = await fetch(url);
+    let rawResponse = await fetch(url, {
+      mode: "no-cors",
+    });
     let jsonResponse = await rawResponse.json();
     data = jsonResponse;
   }
